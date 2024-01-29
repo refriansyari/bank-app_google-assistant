@@ -1,0 +1,46 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<!-- This is a sample shortcuts.xml -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <app-widget
+            android:targetClass="com.refridev.bankapp.widget.BalanceWidgetProvider"
+            android:targetPackage="com.refridev.bankapp">
+            <parameter
+                android:name="feature"
+                android:key="feature">
+            </parameter>
+            <extra android:name="hasTts" android:value="true"/>
+        </app-widget>
+    </capability>
+
+    <shortcut
+        android:shortcutId="get balance"
+        android:shortcutShortLabel="@array/balance_synonyms">
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding
+                android:key="feature"
+                android:value="featureParam"/>
+        </capability-binding>
+    </shortcut>
+
+    <capability android:name="actions.intent.CREATE_MONEY_TRANSFER">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.refridev.bankapp"
+            android:targetClass="com.refridev.bankapp.ui.transaction.amount.InputAmountActivity">
+            <parameter
+                android:name="moneyTransfer.transferMode"
+                android:key="transferMode"/>
+            <parameter
+                android:name="moneyTransfer.amount.value"
+                android:key="value"/>
+            <parameter
+                android:name="moneyTransfer.amount.currency"
+                android:key="currency"/>
+        </intent>
+    </capability>
+
+</shortcuts>
+
+

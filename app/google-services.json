@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "991109146357",
+    "project_id": "bankapp-9f496",
+    "storage_bucket": "bankapp-9f496.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991109146357:android:260f7dd295997ecd7b07bc",
+        "android_client_info": {
+          "package_name": "com.refridev.bankapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtB4jNqph3dEq5Lf7tSvgkk2QlXvStWg8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

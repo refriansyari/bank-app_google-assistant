@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="balance_synonyms">
+        <item>get balance</item>
+        <item>check balance</item>
+        <item>view balance</item>
+        <item>obtain balance</item>
+    </array>
+</resources>

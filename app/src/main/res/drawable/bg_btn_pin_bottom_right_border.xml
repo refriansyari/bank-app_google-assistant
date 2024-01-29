@@ -1,0 +1,37 @@
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    &lt;!&ndash; Background color &ndash;&gt;
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" /> &lt;!&ndash; Set your desired background color &ndash;&gt;
+            <corners android:radius="0dp" /> &lt;!&ndash; Set your desired corner radius &ndash;&gt;
+        </shape>
+    </item>
+
+    <item android:right="1dp">
+        <shape>
+            <solid android:color="@color/dark_blue" /> &lt;!&ndash; Set your desired background color &ndash;&gt;
+            <stroke android:width="1dp" android:color="@color/light_grey_bg" /> &lt;!&ndash; Set your desired border color &ndash;&gt;
+        </shape>
+    </item>
+
+    &lt;!&ndash; Bottom border &ndash;&gt;
+    <item android:bottom="1dp">
+        <shape>
+            <solid android:color="@color/dark_blue" /> &lt;!&ndash; Set your desired background color &ndash;&gt;
+            <stroke android:width="1dp" android:color="@color/light_grey_bg" /> &lt;!&ndash; Set your desired border color &ndash;&gt;
+        </shape>
+    </item>
+
+</layer-list>-->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- Background -->
+<item>
+    <shape>
+        <solid android:color="@color/dark_blue"/> <!-- Set your desired background color -->
+    </shape>
+</item>
+
+</layer-list>

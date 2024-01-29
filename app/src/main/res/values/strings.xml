@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">BankApp</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="btn_next">NEXT</string>
+    <string name="btn_back">BACK</string>
+    <string name="btn_confirm">CONFIRM</string>
+    <string name="previous">Previous</string>
+    <string name="text_bank">Bank</string>
+
+    <string name="main_text_welcome_title">Selamat Datang</string>
+    <string name="main_text_app_title">Aplikasi Google Assistant</string>
+
+    <string name="transaction_success_title">Transfer sukses!</string>
+    <string name="transaction_success_desc">Transfer berhasil dilakukan. Apabila ada kendala, silahkan hubungi BRI Customer Care</string>
+    <string name="transaction_success_back_to_app">Kembali ke app</string>
+
+    <string name="recipient_bank_title">BRI Mobile Banking</string>
+    <string name="recipient_bank_desc">Kami menemukan beberapa rekening atas nama Aditya Putra. Pilih rekening yang Anda tuju :</string>
+
+    <string name="amount_input_desc">Silahkan masukkan nominal transfer yang anda inginkan</string>
+    <string name="amount_input_header">Transfer bank</string>
+    <string name="amount_input_amount">Amount</string>
+    <string name="amount_current_balance">Current Balance</string>
+    <string name="amount_current_balance_dummy">Rp 32.450.230</string>
+
+    <string name="detail_desc">Berikut ringkasan transfer Anda. Apakah Anda setuju?</string>
+    <string name="detail_transfer_from">Transfer from</string>
+    <string name="detail_transfer_to">to</string>
+    <string name="detail_transfer_amount">Transfer amount</string>
+    <string name="detail_admin_fee">Admin fee</string>
+    <string name="detail_admin_fee_input">FREE</string>
+    <string name="detail_total">Total</string>
+    <string name="detail_sender_acc">BRI 0892389207111</string>
+    <string name="detail_sender_name">Rahayuning</string>
+    <string name="detail_recipient_acc">Mandiri 875957832929</string>
+    <string name="detail_recipient_name">Aditya Putra</string>
+    <string name="detail_amount_dummy">1200</string>
+
+    <string name="pin_input_title">Enter your PIN</string>
+    <string name="pin_input_forgot_pin">Lupa PIN?</string>
+
+    <string name="shortcut_balance_long_label">Get Balance on Bank App</string>
+    <string name="shortcut_short_label_balance">Get Balance on Bank App</string>
+
+    <string name="widget_desc">Berikut informasi saldo untuk rekening BRI atas nama Rahayuning</string>
+    <string name="widget_check_balance">Cek Saldo</string>
+    <string name="widget_selected_accounte">Selected accounte</string>
+
+    <string name="widget_current_balance_title">Current Balance</string>
+    <string name="widget_current_balance">Rp 1.500.000</string>
+    <string name="widget_user_account">BRI 0892389207111</string>
+    <string name="widget_user_name">Rahayuning</string>
+    <string name="widget_description">Widget that shows current balance of user</string>
+    <string name="widget_activity_text">Berikut informasi saldo anda pada tanggal 19 January</string>
+    <string name="transfer_short_label">Send Money</string>
+    <string name="transfer_long_label">Transfer Money From My Bank App</string>
+
+    <string-array name="get_balance_synonyms">
+        <item>get balance</item>
+        <item>check balance</item>
+        <item>view balance</item>
+        <item>obtain balance</item>
+    </string-array>
+
+</resources>

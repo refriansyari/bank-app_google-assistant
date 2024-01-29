@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/ll_recipient"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp"
+android:background="@drawable/bg_recipient_list"
+android:layout_marginTop="8dp">
+
+<androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/ll_recipient_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Aditya Putra (BNI)"
+    android:textAppearance="@style/TextAppearance.Text.PlusJakartaSans.SemiBold"
+    android:textSize="14sp"
+    android:textColor="@color/dark_grey"/>
+
+<androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/ll_recipient_account"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:text="BNI 84932043024"
+    android:textAppearance="@style/TextAppearance.Text.PlusJakartaSans.Regular"
+    android:textSize="14sp"
+    android:textColor="@color/light_grey"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
