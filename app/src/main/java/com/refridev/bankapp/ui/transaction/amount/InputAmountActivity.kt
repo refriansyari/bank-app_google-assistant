@@ -17,30 +17,27 @@ class InputAmountActivity : BaseActivity<ActivityInputAmountBinding, InputAmount
 
     private var name : String = ""
     private var account : String = ""
+    private var amount : String = ""
 
     override fun initView() {
 
         setButtonListener()
         setTextWatcher()
-
-        val intent = intent
-        getIntentData(intent)
+        getIntentData()
     }
 
-    private fun getIntentData(intent: Intent){
-        if (intent?.extras != null) {
-            // Extract the data you need from the Intent extras
-            val dataAmount = intent.getStringExtra(EXTRA_VALUE)
-            name = intent.getStringExtra(EXTRA_NAME) ?: getString(R.string.detail_recipient_name)
-            account = intent.getStringExtra(EXTRA_ACCOUNT) ?: getString(R.string.detail_recipient_acc)
-            if (dataAmount != null) {
-                // For example, update UI elements with the retrieved data
-                getViewBinding().etAmount.setText(dataAmount)
-                getViewBinding().btnNext.isEnabled = true
-                getViewBinding().btnNext.alpha = 1.0f
-            }else {
-                showKeyboard(getViewBinding().etAmount)
-            }
+    private fun getIntentData(){
+        // Extract the data you need from the Intent extras
+        amount = intent.getStringExtra(EXTRA_AMOUNT) ?: "0"
+        name = intent.getStringExtra(EXTRA_NAME) ?: getString(R.string.detail_recipient_name)
+        account = intent.getStringExtra(EXTRA_ACCOUNT) ?: getString(R.string.detail_recipient_acc)
+        if (amount != "0") {
+            // For example, update UI elements with the retrieved data
+            getViewBinding().etAmount.setText(amount)
+            getViewBinding().btnNext.isEnabled = true
+            getViewBinding().btnNext.alpha = 1.0f
+        }else {
+            showKeyboard(getViewBinding().etAmount)
         }
     }
 
@@ -104,6 +101,9 @@ class InputAmountActivity : BaseActivity<ActivityInputAmountBinding, InputAmount
         editText.requestFocus()
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT)
+
+        getViewBinding().btnNext.isEnabled = false
+        getViewBinding().btnNext.alpha = 0.5f
     }
 
     override fun showContent(isVisible: Boolean) {}
@@ -113,12 +113,14 @@ class InputAmountActivity : BaseActivity<ActivityInputAmountBinding, InputAmount
     companion object {
         private const val EXTRA_NAME = "EXTRA_NAME"
         private const val EXTRA_ACCOUNT = "EXTRA_ACCOUNT"
+        private const val EXTRA_AMOUNT = "EXTRA_AMOUNT"
         private const val EXTRA_VALUE = "value"
 
-        fun getStartIntent(context: Context?, name: String, account: String): Intent {
+        fun getStartIntent(context: Context?, name: String, account: String, amount: String): Intent {
             return Intent(context, InputAmountActivity::class.java)
                 .putExtra(EXTRA_NAME, name)
                 .putExtra(EXTRA_ACCOUNT, account)
+                .putExtra(EXTRA_AMOUNT, amount)
         }
     }
 }

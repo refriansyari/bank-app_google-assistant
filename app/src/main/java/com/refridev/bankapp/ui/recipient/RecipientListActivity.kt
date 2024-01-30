@@ -1,6 +1,9 @@
 package com.refridev.bankapp.ui.recipient
 
+import android.content.Context
+import android.content.Intent
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.refridev.bankapp.R
 import com.refridev.bankapp.base.BaseActivity
 import com.refridev.bankapp.base.Resource
 import com.refridev.bankapp.data.model.response.RecipientListResponse
@@ -14,10 +17,15 @@ class RecipientListActivity : BaseActivity<ActivityRecipientListBinding, Recipie
     (ActivityRecipientListBinding::inflate), RecipientListAdapter.OnItemClickListener, RecipientListContract.View {
 
     private lateinit var adapter: RecipientListAdapter
+    private var amount: String = ""
 
     override fun initView() {
         adapter = RecipientListAdapter()
         setRecycleView()
+        getViewModel().getRecipientList()
+
+        val intent = intent
+        getIntentData(intent)
     }
 
     override fun setRecycleView(){
@@ -25,15 +33,15 @@ class RecipientListActivity : BaseActivity<ActivityRecipientListBinding, Recipie
             layoutManager = LinearLayoutManager(context)
             adapter = this@RecipientListActivity.adapter
         }
-
-        val mockRecipients: List<RecipientListResponse> = listOf(
-            RecipientListResponse("Aditya Putra (BRI)", "BRI 0892389207231"),
-            RecipientListResponse("Aditya Putra (Mandiri)", "Mandiri 875957832929"),
-            RecipientListResponse("Aditya Putra (BNI)", "BNI 84932043024"),
-            // Add more items as needed
-        )
         adapter.setOnItemClickListener(this)
-        adapter.setItems(mockRecipients)
+//        adapter.setItems(mockRecipients)
+    }
+
+    private fun getIntentData(intent: Intent){
+        if (intent?.extras != null) {
+            // Extract the data you need from the Intent extras
+            amount = intent.getStringExtra(EXTRA_VALUE) ?: "0"
+        }
     }
 
     override fun setDataAdapter(data: List<RecipientListResponse>?){
@@ -67,6 +75,8 @@ class RecipientListActivity : BaseActivity<ActivityRecipientListBinding, Recipie
                     showContent(false)
                     showError(true, it.message)
                 }
+
+                else -> {}
             }
         }
     }
@@ -78,8 +88,17 @@ class RecipientListActivity : BaseActivity<ActivityRecipientListBinding, Recipie
     override fun onItemClicked(recipientListResponse: RecipientListResponse) {
         val name = recipientListResponse.recipientName.toString()
         val account = recipientListResponse.accountNumber.toString()
+        val amount = intent.getStringExtra(EXTRA_VALUE) ?: "0"
 
-        startActivity(InputAmountActivity.getStartIntent(this, name, account))
+        startActivity(InputAmountActivity.getStartIntent(this, name, account, amount))
+    }
+
+    companion object {
+        private const val EXTRA_VALUE = "value"
+
+        fun getStartIntent(context: Context?): Intent {
+            return Intent(context, RecipientListActivity::class.java)
+        }
     }
 
 

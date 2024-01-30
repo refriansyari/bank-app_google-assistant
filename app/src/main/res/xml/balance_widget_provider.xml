@@ -4,7 +4,7 @@
     android:initialKeyguardLayout="@layout/balance_widget"
     android:initialLayout="@layout/balance_widget"
     android:minWidth="300dp"
-    android:minHeight="270dp"
+    android:minHeight="240dp"
     android:previewImage="@drawable/ic_logo"
     android:previewLayout="@layout/balance_widget"
     android:resizeMode="vertical"
