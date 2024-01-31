@@ -32,6 +32,7 @@ class RecipientListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun setItems(items: List<RecipientListResponse>){
         this.items.addAll(items)
+        notifyDataSetChanged()
     }
 
     inner class ViewHolder(private val binding: ItemRecipientBinding): RecyclerView.ViewHolder(binding.root){

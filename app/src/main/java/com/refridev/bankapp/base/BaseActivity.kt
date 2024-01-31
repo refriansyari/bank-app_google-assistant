@@ -30,7 +30,7 @@ abstract class BaseActivity<B : ViewBinding, VM : ViewModel>(
         initView()
         observeData()
 
-        changeStatusBarColor("#0C59B3")
+        changeStatusBarColor("#3B82C9")
     }
 
     abstract fun initView()

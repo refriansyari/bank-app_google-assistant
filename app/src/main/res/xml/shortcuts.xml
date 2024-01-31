@@ -2,27 +2,26 @@
 <!-- This is a sample shortcuts.xml -->
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+    <capability android:name="actions.intent.GET_ACCOUNT">
         <app-widget
-            android:targetClass="com.refridev.bankapp.widget.BalanceWidgetProvider"
-            android:targetPackage="com.refridev.bankapp">
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.refridev.bankapp"
+            android:targetClass="com.refridev.bankapp.widget.BalanceWidgetProvider">
+            <!-- Eg. accountName = "utility" -->
             <parameter
-                android:name="feature"
-                android:key="feature">
-            </parameter>
+                android:name="account.name"
+                android:key="accountName"/>
+            <!-- Eg. description = "Description of account" -->
+            <parameter
+                android:name="account.description"
+                android:key="description"/>
+            <!-- Eg. providerName = "Example Provider" -->
+            <parameter
+                android:name="account.provider.name"
+                android:key="providerName"/>
             <extra android:name="hasTts" android:value="true"/>
         </app-widget>
     </capability>
-
-    <shortcut
-        android:shortcutId="get balance"
-        android:shortcutShortLabel="@array/balance_synonyms">
-        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
-            <parameter-binding
-                android:key="feature"
-                android:value="featureParam"/>
-        </capability-binding>
-    </shortcut>
 
     <capability android:name="actions.intent.CREATE_MONEY_TRANSFER">
         <intent

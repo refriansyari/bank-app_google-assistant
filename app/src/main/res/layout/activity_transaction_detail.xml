@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
         android:paddingEnd="16dp"
-        android:text="@string/amount_input_desc"
+        android:text="@string/detail_desc"
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

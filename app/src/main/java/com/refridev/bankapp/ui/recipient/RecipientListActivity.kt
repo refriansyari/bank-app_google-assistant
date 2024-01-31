@@ -20,12 +20,15 @@ class RecipientListActivity : BaseActivity<ActivityRecipientListBinding, Recipie
     private var amount: String = ""
 
     override fun initView() {
+        val intent = intent
+        getIntentData(intent)
+    }
+
+    override fun onResume() {
+        super.onResume()
         adapter = RecipientListAdapter()
         setRecycleView()
         getViewModel().getRecipientList()
-
-        val intent = intent
-        getIntentData(intent)
     }
 
     override fun setRecycleView(){
@@ -34,7 +37,6 @@ class RecipientListActivity : BaseActivity<ActivityRecipientListBinding, Recipie
             adapter = this@RecipientListActivity.adapter
         }
         adapter.setOnItemClickListener(this)
-//        adapter.setItems(mockRecipients)
     }
 
     private fun getIntentData(intent: Intent){
